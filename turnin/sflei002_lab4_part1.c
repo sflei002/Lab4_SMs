@@ -77,23 +77,23 @@ void Tick(){
 
   switch(SM1_State) {   // State actions
      case SM1_Start:
-        B = 0;
+        PORTB = 0;
         break;
 
      case SM1_1:
-	B = 0x01;
+	PORTB = 0x01;
         break;
 
      case SM1_2:
-        B = 0x02;
+        PORTB = 0x02;
         break;
 
      case SM1_3:
-	B = 0x02;
+	PORTB = 0x02;
         break;
 
      case SM1_4:
-	B = 0x01;
+	PORTB = 0x01;
         break;
 
      default:
