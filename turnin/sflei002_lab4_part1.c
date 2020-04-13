@@ -29,46 +29,43 @@ int main(void){
 
 void Tick(){
   switch(SM1_State) {   // Transitions
-     case SM1_Start:  // Initial transition
-        SM1_State = SM1_Start;
-        break;
 
      case SM1_Start:
         SM1_State = SM1_1;
         break;
 
      case SM1_1:
-        if (A0) {
+        if ((PINA & 0x01) == 0x01) {
            SM1_State = SM1_2;
         }
-        else if (!A0) {
+        else if ((~PINA & 0x01) == 0x01) {
            SM1_State = SM1_1;
         }
         break;
 
      case SM1_2:
-        if (A0) {
+        if ((PINA & 0x01) == 0x01) {
            SM1_State = SM1_2;
         }
-        else if (!A0) {
+        else if ((~PINA & 0x01) == 0x01) {
            SM1_State = SM1_3;
         }
         break;
 
 	case SM1_3:
-        if (A0) {
+        if ((PINA & 0x01) == 0x01) {
            SM1_State = SM1_4;
         }
-        else if (!A0) {
+        else if ((~PINA & 0x01) == 0x01) {
            SM1_State = SM1_3;
         }
         break;
 
 	case SM1_4:
-        if (A0) {
+        if ((PINA & 0x01) == 0x01) {
            SM1_State = SM1_4;
         }
-        else if (!A0) {
+        else if ((~PINA & 0x01) == 0x01) {
            SM1_State = SM1_1;
         }
         break;
@@ -84,7 +81,7 @@ void Tick(){
         break;
 
      case SM1_1:
-	B = 0x01
+	B = 0x01;
         break;
 
      case SM1_2:
