@@ -40,11 +40,21 @@ void Tick(){
         }
 	else if ((PINA & 0x01) == 0x01) {
                 SM1_State = SM1_2;
+		if(PORTC < 0x09){
                 PORTC = PORTC + 1;
+		}
+		else{
+			PORTC = 0x09;
+		}
 	}
         else if ((PINA & 0x02) == 0x02) {
 		SM1_State = SM1_3;
-		PORTC = PORTC - 1;
+		if(PORTC > 0x00){
+                PORTC = PORTC - 1;
+                }
+                else{
+                        PORTC = 0x00;
+                }
         }
 	else if ((PINA & 0x03) == 0x03) {
                 SM1_State = SM1_5;
@@ -84,11 +94,21 @@ void Tick(){
         }
         else if ((PINA & 0x01) == 0x01) {
                 SM1_State = SM1_2;
+                if(PORTC < 0x09){
                 PORTC = PORTC + 1;
+                }
+                else{
+                        PORTC = 0x09;
+                }
         }
         else if ((PINA & 0x02) == 0x02) {
                 SM1_State = SM1_3;
+                if(PORTC > 0x00){
                 PORTC = PORTC - 1;
+                }
+                else{
+                        PORTC = 0x00;
+                }
         }
         else if ((PINA & 0x03) == 0x03) {
                 SM1_State = SM1_5;
@@ -102,11 +122,21 @@ void Tick(){
         }
         else if ((PINA & 0x01) == 0x01) {
                 SM1_State = SM1_2;
+                if(PORTC < 0x09){
                 PORTC = PORTC + 1;
+                }
+                else{
+                        PORTC = 0x09;
+                }
         }
         else if ((PINA & 0x02) == 0x02) {
                 SM1_State = SM1_3;
+                if(PORTC > 0x00){
                 PORTC = PORTC - 1;
+                }
+                else{
+                        PORTC = 0x00;
+                }
         }
         else if ((PINA & 0x03) == 0x03) {
                 SM1_State = SM1_5;
